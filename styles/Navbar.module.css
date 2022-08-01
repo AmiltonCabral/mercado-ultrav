@@ -1,0 +1,21 @@
+.navbar {
+    background-color: blueviolet;
+    display: flex;
+}
+
+.list {
+    display: flex;
+    padding: 20px 10px;
+    list-style: none;
+}
+
+.list a {
+    color: white;
+    margin-right: 1em;
+    text-decoration: none;
+    transition: .3s;
+}
+
+.navbar a:hover {
+    color: black;
+}
