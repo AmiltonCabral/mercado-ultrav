@@ -1,8 +1,20 @@
 import Head from 'next/head'
 import styles from '../styles/Home.module.css'
 
-//<div className={styles.container}>
-export default function Home() {
+export async function getStaticProps() {
+  const api = 'http://localhost:3000/api/products'
+
+  const res = await fetch(`${api}`)
+  const data = await res.json()
+
+  return {
+    props: {
+      products: data.planets,
+    },
+  }
+}
+
+export default function Home({ products }) {
   return (
     <>
       <Head>
@@ -13,6 +25,14 @@ export default function Home() {
       </Head>
       <div>
         <h1>Hello Next JS</h1>
+        <div>
+          <h2>Products</h2>
+          <ul>
+            {products.map((product) => (
+              <li key={product.id}>{product.name}</li>
+            ))}
+          </ul>
+        </div>
       </div>
     </>
   )
