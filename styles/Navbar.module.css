@@ -1,12 +1,32 @@
 .navbar {
     background-color: blueviolet;
     display: flex;
+    flex-direction: row;
+    align-items: center;
+    color: white;
+    padding: 0 50px;
+}
+
+.navbar l1 {
+    text-align: center;
+    font-size: 40px;
+    text-shadow: 10px;
+}
+
+.search {
+    text-align: left;
+    font-size: 25px;
+}
+
+.item {
+    flex: 1;
 }
 
 .list {
-    display: flex;
     padding: 20px 10px;
     list-style: none;
+    display: flex;
+    justify-content: right;
 }
 
 .list a {
