@@ -1,4 +1,5 @@
 import Head from 'next/head'
+import Card from '../components/Card'
 import styles from '../styles/Home.module.css'
 
 export async function getStaticProps() {
@@ -31,7 +32,7 @@ export default function Home({ products }) {
       <div>
         <div className={styles.product_container}>
           {products.map((product) => (
-            <p key={product.id}>{product.name}</p>
+            <Card key={product.id} product={product} />
           ))}
         </div>
       </div>

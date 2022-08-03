@@ -6,7 +6,7 @@ export default function Navbar() {
   return (
     <nav className={styles.navbar}>
       <div className={`${styles.item} ${styles.search}`}>
-        <i class="fa fa-search"></i>
+        <i className="fa fa-search"></i>
       </div>
       <l1 className={styles.item}>Ultra<span>V</span></l1>
       <div className={styles.item}>
