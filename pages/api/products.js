@@ -14,7 +14,22 @@ export default function handler(req, res) {
           "id": 2,
           "name": "Earth",
           "price": 500000
-        }
+        },
+        {
+          "id": 3,
+          "name": "Earth",
+          "price": 500000
+        },
+        {
+          "id": 4,
+          "name": "Earth",
+          "price": 500000
+        },
+        {
+          "id": 5,
+          "name": "Earth",
+          "price": 500000
+        },
       ]
     }
   )

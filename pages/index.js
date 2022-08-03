@@ -23,15 +23,16 @@ export default function Home({ products }) {
         <meta name="description" content="Buy planets on sale"></meta>
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"></link>
       </Head>
+
+      <div className={styles.title_container}>
+        <h1 className={styles.title}>Our products</h1>
+      </div>
+
       <div>
-        <h1>Hello Next JS</h1>
-        <div>
-          <h2>Products</h2>
-          <ul>
-            {products.map((product) => (
-              <li key={product.id}>{product.name}</li>
-            ))}
-          </ul>
+        <div className={styles.product_container}>
+          {products.map((product) => (
+            <p key={product.id}>{product.name}</p>
+          ))}
         </div>
       </div>
     </>

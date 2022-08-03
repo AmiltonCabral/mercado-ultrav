@@ -1,0 +1,21 @@
+.title_container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 2em;
+}
+
+.title {
+  color: blueviolet;
+  text-align: center;
+  font-size: 2em;
+}
+
+.product_container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1100px;
+  margin: 0 auto;
+}
