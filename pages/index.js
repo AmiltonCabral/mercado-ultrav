@@ -29,12 +29,10 @@ export default function Home({ products }) {
         <h1 className={styles.title}>Our products</h1>
       </div>
 
-      <div>
-        <div className={styles.product_container}>
-          {products.map((product) => (
-            <Card key={product.id} product={product} />
+      <div className={styles.product_container}>
+        {products.map((product) => (
+          <Card key={product.id} product={product} />
           ))}
-        </div>
       </div>
     </>
   )
