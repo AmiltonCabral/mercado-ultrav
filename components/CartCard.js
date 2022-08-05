@@ -20,12 +20,15 @@ export default function CartCard({product, index}) {
         />
       </Link>
       <div className={styles.product_status}>
-        <h3 className={styles.product_name}>{product.name}</h3>
-        <h4>R$ {product.price}</h4>
-        <button
+        <div>
+          <h3 className={styles.product_name}>{product.name}</h3>
+          <h4>R$ {product.price}</h4>
+        </div>
+        <a
+          className={styles.remove_product}
           onClick={() => removeItemFromCart(index)}>
           Remover produto
-        </button>
+        </a>
       </div>
     </div>
   )

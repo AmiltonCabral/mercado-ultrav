@@ -1,0 +1,23 @@
+.cart_status {
+  display: flex;
+  justify-content: space-between;
+  max-width: 70%;
+  padding: 0px 2em;
+  padding-bottom: 2em;
+}
+
+.clear_cart {
+  border: none;
+  background-color: slategray;
+  color: white;
+  font-size: 1.2em;
+  border-radius: 8px;
+  box-shadow: 5px 5px 9px rgba(0, 0, 0, 0.4);
+  cursor: pointer;
+  transition: 0.4s;
+  padding: 10px;
+}
+
+.clear_cart:hover {
+  background-color: tomato;
+}

@@ -2,6 +2,7 @@ import Head from "next/head"
 import CartCard from "../components/CartCard"
 import { useContext } from "react"
 import { CartContext } from "../contexts/CartContext"
+import styles from "../styles/Cart.module.css"
 
 export default function Cart() {
 
@@ -10,16 +11,20 @@ export default function Cart() {
   return (
     <>
       <Head>
-        <title>Your planets Cart</title>
+        <title>Cart with {cart.length} products</title>
       </Head>
-      <h1>Carrinho de Compras</h1>
 
-      <h3>Quantidade itens: {cart.length}</h3>
-
-      <button
-        onClick={() => clearCart()}>
-        Clear Cart
-      </button>
+      <div className={styles.cart_status}>
+        <div>
+          <h1>Cart</h1>
+          <h3>Items: {cart.length}</h3>
+        </div>
+        <button
+          className={styles.clear_cart}
+          onClick={() => clearCart()}>
+          Clear Cart
+        </button>
+      </div>
 
       <div>
         {cart.map((product, index) =>
@@ -27,7 +32,7 @@ export default function Cart() {
         )}
       </div>
 
-      <h3>Preço total: R$ {totalPrice()}</h3>
+      <h3>Total price: R$ {totalPrice()}</h3>
     </>
   )
 }
