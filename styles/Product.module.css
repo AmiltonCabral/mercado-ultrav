@@ -1,0 +1,10 @@
+.product_container {
+  display: flex;
+}
+
+.product_status {
+  display: flex;
+  flex-direction: column;
+  margin-left: 50px;
+  gap: 20px 0;
+}

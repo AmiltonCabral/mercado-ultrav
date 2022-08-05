@@ -13,21 +13,27 @@ export default function handler(req, res) {
       planets:
       [
         {
+          "id": 1,
+          "name": "Sun",
+          "price": 9999999999999,
+          "image": "sun"
+        },
+        {
           "id": 2,
           "name": "Earth",
-          "price": 500000.00,
+          "price": 7500000000,
           "image": "earth"
         },
         {
           "id": 3,
           "name": "Mars",
-          "price": 500000.00,
+          "price": 3000000000,
           "image": "mars"
         },
         {
           "id": 4,
           "name": "Mercury",
-          "price": 500000.00,
+          "price": 500000,
           "image": "mercury"
         },
         {

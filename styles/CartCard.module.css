@@ -1,0 +1,23 @@
+.cart_card {
+  display: flex;
+  background-color: white;
+  padding: 1em 2em;
+  margin-bottom: 2em;
+  width: 70%;
+  border-radius: 1em;
+  border: 2px solid white;
+  box-shadow: 5px 5px 9px rgba(0, 0, 0, 0.4);
+}
+
+.image {
+  cursor: pointer;
+}
+
+.product_status {
+  margin-left: 30px;
+}
+
+.product_name {
+  font-size: 1.5em;
+  cursor: pointer;
+}

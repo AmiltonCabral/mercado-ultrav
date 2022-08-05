@@ -20,7 +20,7 @@ export default function Home({ products }) {
     <>
       <Head>
         <title>Ultra V - Buy planets on sale</title>
-        <meta name="keyworkds" content="Planets, Moons, Suns"></meta>
+        <meta name="keyworkds" content="Planets, Moons, Stars"></meta>
         <meta name="description" content="Buy planets on sale"></meta>
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"></link>
       </Head>
@@ -30,9 +30,9 @@ export default function Home({ products }) {
       </div>
 
       <div className={styles.product_container}>
-        {products.map((product) => (
+        {products.map((product) =>
           <Card key={product.id} product={product} />
-          ))}
+        )}
       </div>
     </>
   )
