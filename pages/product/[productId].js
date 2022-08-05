@@ -56,7 +56,7 @@ export default function Produto({product}) {
           <h2>{product.name}</h2>
           <h5><s>R$ {product.price*1.20}</s></h5>
           <h3 color="blue">R$ {product.price}</h3>
-          <h5>Até 6x de R$ {product.price / 6} sem juros</h5>
+          <h5>6x R$ {product.price / 6}</h5>
           <button
             className={styles.add_cart}
             onClick={() => addItemToCart(product)}>

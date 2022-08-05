@@ -27,7 +27,7 @@ export default function CartCard({product, index}) {
         <a
           className={styles.remove_product}
           onClick={() => removeItemFromCart(index)}>
-          Remover produto
+          Remove product
         </a>
       </div>
     </div>
