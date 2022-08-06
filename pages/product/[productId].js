@@ -37,7 +37,7 @@ export const getStaticProps = async (context) => {
 
 export default function Produto({product}) {
 
-  const { cart, addItemToCart } = useContext(CartContext)
+  const { addItemToCart } = useContext(CartContext)
 
   return (
     <>
