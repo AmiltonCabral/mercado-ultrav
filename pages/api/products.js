@@ -1,12 +1,5 @@
 // Next.js API route support: https://nextjs.org/docs/api-routes/introduction
-/*
-  {
-    "id": 1,
-    "name": "Sun",
-    "price": 1000000,
-    "image": "sun"
-  },
-*/
+
 export default function handler(req, res) {
   res.status(200).json(
     {
@@ -59,8 +52,7 @@ export default function handler(req, res) {
           "name": "Venus",
           "price": 500000.00,
           "image": "venus"
-        },
-        {
+        },        {
           "id": 9,
           "name": "Moon",
           "price": 500000.00,

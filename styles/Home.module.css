@@ -12,10 +12,8 @@
 }
 
 .product_container {
-  justify-content: space-evenly;
-  align-items: center;
-  display: flex;
-  flex-wrap: wrap;
-  gap: 30px 50px;
-  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 23% 23% 23%;
+  gap: 50px;
+  justify-content: center;
 }
