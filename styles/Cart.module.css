@@ -21,3 +21,9 @@
 .clear_cart:hover {
   background-color: tomato;
 }
+
+.clear_cart:active {
+  background-color: violet;
+  box-shadow: 5px 5px 9px rgba(0, 0, 0, 0.2);
+  transition: .1s;
+}
