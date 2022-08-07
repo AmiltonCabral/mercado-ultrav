@@ -3,7 +3,7 @@
 export default function handler(req, res) {
   res.status(200).json(
     {
-      planets:
+      products:
       [
         {
           "id": 1,

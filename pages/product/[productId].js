@@ -11,9 +11,9 @@ export const getStaticPaths = async () => {
 
   const data = await res.json()
 
-  const paths = data.planets.map((planet) => {
+  const paths = data.products.map((product) => {
     return {
-      params: { productId: planet.id.toString() },
+      params: { productId: product.id.toString() },
     }
   })
 
@@ -31,7 +31,7 @@ export const getStaticProps = async (context) => {
   const data = await api.json()
 
   return {
-    props: {product: data.planets[id-1]}
+    props: {product: data.products[id-1]}
   }
 }
 

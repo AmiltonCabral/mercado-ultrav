@@ -10,7 +10,7 @@ export async function getStaticProps() {
 
   return {
     props: {
-      products: data.planets,
+      products: data.products,
     },
   }
 }
