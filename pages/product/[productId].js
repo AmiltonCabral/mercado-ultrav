@@ -47,7 +47,7 @@ export default function Produto({product}) {
 
       <div className={styles.product_container}>
         <Image
-          src={`/images/${product.image}.png`}
+          src={`/images/${product.image}`}
           width="400px"
           height="400px"
           alt={product.name}

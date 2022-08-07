@@ -12,7 +12,7 @@ export default function CartCard({product, index}) {
     <div className={styles.cart_card}>
       <Link href={`/product/${product.id}`}>
         <Image
-          src={`/images/${product.image}.png`}
+          src={`/images/${product.image}`}
           width="70px"
           height="70px"
           alt={product.name}

@@ -7,7 +7,7 @@ export default function Card({product}) {
     <Link href={`/product/${product.id}`}>
       <div className={styles.card}>
         <Image
-          src={`/images/${product.image}.png`}
+          src={`/images/${product.image}`}
           width="200px"
           height="200px"
           alt={product.name}
