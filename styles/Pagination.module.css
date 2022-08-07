@@ -1,0 +1,30 @@
+.list {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+  padding: 2em;
+}
+
+.item {
+  margin: auto 10px;
+  list-style: none;
+}
+
+.item button {
+  border: none;
+  font-size: 1.2em;
+  border-radius: 4px;
+  width: 40px;
+  border: 2px solid slategray;
+}
+
+.active {
+  background-color: whitesmoke;
+  color: slategray;
+}
+
+.inactive {
+  background-color: slategray;
+  color: white;
+  cursor: pointer;
+}

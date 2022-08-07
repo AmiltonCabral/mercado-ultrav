@@ -1,5 +1,7 @@
+import { useState } from 'react'
 import Head from 'next/head'
 import Card from '../components/Card'
+import Pagination from '../components/Pagination'
 import styles from '../styles/Home.module.css'
 
 export async function getStaticProps() {
@@ -16,6 +18,15 @@ export async function getStaticProps() {
 }
 
 export default function Home({ products }) {
+
+  const ITEMS_PER_PAGE = 9
+
+  const [currentPage, setCurrentPage] = useState(0)
+
+  const offset = currentPage * ITEMS_PER_PAGE;
+
+  const currentPageProducts = products.slice(offset, offset + ITEMS_PER_PAGE)
+
   return (
     <>
       <Head>
@@ -30,10 +41,19 @@ export default function Home({ products }) {
       </div>
 
       <div className={styles.product_container}>
-        {products.map((product) =>
+        {currentPageProducts.map((product) =>
           <Card key={product.id} product={product} />
         )}
       </div>
+
+      <Pagination
+        total={products.length}
+        itemsPerPage={ITEMS_PER_PAGE}
+        offset={offset}
+        currentPage={currentPage}
+        setCurrentPage={setCurrentPage}
+      />
+
     </>
   )
 }
