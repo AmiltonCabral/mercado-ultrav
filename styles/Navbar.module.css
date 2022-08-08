@@ -4,7 +4,12 @@
     flex-direction: row;
     align-items: center;
     color: white;
-    padding: 0 50px;
+    padding: 0 10px;
+    position: fixed;
+    overflow: hidden;
+    top: 0;
+    width: 100%;
+    z-index: 1;
 }
 
 .navbar l1 {
@@ -16,6 +21,19 @@
 .search {
     text-align: left;
     font-size: 25px;
+}
+
+.search input[type=text] {
+    background-image: url('/images/search-icon.png');
+    background-position-x: 10px;
+    background-repeat: no-repeat;
+    background-position-y: center;
+    background-size: 10px;
+    padding-left: 30px;
+    border-radius: 30px;
+    border: 0px;
+    height: 30px;
+    width: 40%;
 }
 
 .item {

@@ -1,18 +1,27 @@
 import Link from 'next/link'
-import { useContext, useState } from 'react'
+import { useContext } from 'react'
 import { SearchContext } from '../contexts/SearchContext'
+import { useRouter } from 'next/router'
 
 import styles from '../styles/Navbar.module.css'
 
 export default function Navbar() {
 
+  const router = useRouter()
+
   const {setSearch} = useContext(SearchContext)
+
+  const handleSubmit = e => {
+    e.preventDefault()
+    router.push("/")
+  }
 
   return (
     <nav className={styles.navbar}>
       <div className={`${styles.item} ${styles.search}`}>
-        <i className="fa fa-search"></i>
-        <input type="text" onChange={(e) => setSearch(e.target.value)}/>
+        <form onSubmit={handleSubmit}>
+          <input type="text" onChange={(e) => setSearch(e.target.value)}/>
+        </form>
       </div>
       <l1 className={styles.item}>Ultra<span>V</span></l1>
       <div className={styles.item}>
