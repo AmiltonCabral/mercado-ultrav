@@ -14,9 +14,9 @@ Go to project directory:
 cd mercado-ultrav/
 ```
 
-Install React scripts
+Install dependencies
 ```bash
-npm i react-scripts
+npm install
 ```
 
 Run the development server:
