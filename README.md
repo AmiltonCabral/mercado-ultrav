@@ -31,3 +31,4 @@ Open [http://localhost:3000](http://localhost:3000) with your browser to see the
 ## Technologies used
 - HTML, CSS, JS
 - React, Next.js
+- Node.js (v16.16.0)
