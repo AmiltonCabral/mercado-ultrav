@@ -1,8 +1,9 @@
-import { useState } from 'react'
+import { useContext, useState } from 'react'
 import Head from 'next/head'
 import Card from '../components/Card'
 import Pagination from '../components/Pagination'
 import styles from '../styles/Home.module.css'
+import { SearchContext } from '../contexts/SearchContext'
 
 export async function getStaticProps() {
   const api = 'http://localhost:3000/api/products'
@@ -19,13 +20,18 @@ export async function getStaticProps() {
 
 export default function Home({ products }) {
 
+  const { search } = useContext(SearchContext)
+
+  const filteredProducts = products.filter((product) =>
+    product.name.toLowerCase().includes(search.toLowerCase()))
+
   const ITEMS_PER_PAGE = 9
 
   const [currentPage, setCurrentPage] = useState(0)
 
   const offset = currentPage * ITEMS_PER_PAGE;
 
-  const currentPageProducts = products.slice(offset, offset + ITEMS_PER_PAGE)
+  const currentPageProducts = filteredProducts.slice(offset, offset + ITEMS_PER_PAGE)
 
   return (
     <>
@@ -47,7 +53,7 @@ export default function Home({ products }) {
       </div>
 
       <Pagination
-        total={products.length}
+        total={filteredProducts.length}
         itemsPerPage={ITEMS_PER_PAGE}
         offset={offset}
         currentPage={currentPage}
