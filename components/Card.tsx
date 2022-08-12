@@ -4,7 +4,7 @@ import { Product } from "../types/Product";
 import styles from "../styles/Card.module.css"
 
 
-type Props = {
+interface Props {
   product: Product
 }
 

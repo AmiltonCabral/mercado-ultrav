@@ -20,7 +20,7 @@ export async function getStaticProps() {
   }
 }
 
-type HomeProps = {
+interface HomeProps {
   products: Product[] | undefined;
 }
 

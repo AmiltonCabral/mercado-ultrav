@@ -1,11 +1,11 @@
 import { createContext, ReactNode, useState } from "react"
 import { Product } from "../types/Product"
 
-type cartContextType = {
-  cart: Product[],
-  addItemToCart: (product: Product) => void,
-  removeItemFromCart: (itemIndex: number) => void,
-  clearCart: () => void,
+interface cartContextType {
+  cart: Product[];
+  addItemToCart: (product: Product) => void;
+  removeItemFromCart: (itemIndex: number) => void;
+  clearCart: () => void;
   totalPrice: () => number
 }
 
@@ -19,7 +19,7 @@ const cartContextDefaultValues: cartContextType = {
 
 export const CartContext = createContext<cartContextType>(cartContextDefaultValues)
 
-type Props = {
+interface Props {
   children: ReactNode
 }
 
@@ -42,7 +42,7 @@ export const CartProvider = ({ children }: Props) => {
     setCart([])
   }
 
-  function totalPrice() {
+  function totalPrice(): number {
     const totalPrice: number = cart.map((product) => product.price).reduce((previousV, currentV) =>
       previousV + currentV, 0
     )

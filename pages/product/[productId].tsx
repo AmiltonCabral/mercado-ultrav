@@ -5,19 +5,13 @@ import { CartContext } from "../../contexts/CartContext"
 import styles from "../../styles/Product.module.css"
 import { Product } from "../../types/Product"
 import { ProductsAPI } from "../../types/ProductsAPI"
-import { GetStaticProps } from "next"
+import { GetStaticPaths, GetStaticProps } from "next"
 
-export const getStaticPaths = async () => {
+export const getStaticPaths: GetStaticPaths = async () => {
 
   const api = await fetch(`http://localhost:3000/api/products`)
 
-  const data: ProductsAPI | undefined = await api.json()
-
-  type Params = {
-    params: {
-      productId: string
-    }
-  }
+  const data: ProductsAPI = await api.json()
 
   const paths = data?.products.map((product) => {
     return {

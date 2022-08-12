@@ -1,10 +1,10 @@
 import { Dispatch, SetStateAction } from 'react'
 import styles from '../styles/Pagination.module.css'
 
-type Props = {
-  total: number,
-  itemsPerPage: number,
-  currentPage: number,
+interface Props {
+  total: number;
+  itemsPerPage: number;
+  currentPage: number;
   setCurrentPage: Dispatch<SetStateAction<number>>
 }
 

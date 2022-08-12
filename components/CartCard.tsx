@@ -1,12 +1,12 @@
-import styles from '../styles/CartCard.module.css'
 import Image from 'next/image'
 import Link from 'next/link'
 import { useContext } from 'react'
 import { CartContext } from '../contexts/CartContext'
 import { Product } from '../types/Product'
+import styles from '../styles/CartCard.module.css'
 
-type Props = {
-  product: Product,
+interface Props {
+  product: Product;
   index: number
 }
 

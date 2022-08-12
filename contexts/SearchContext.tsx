@@ -1,6 +1,6 @@
 import { createContext, Dispatch, ReactNode, SetStateAction, useState } from "react"
 
-type searchContextType = {
+interface searchContextType {
   search: string,
   setSearch: Dispatch<SetStateAction<string>>
 }
@@ -12,7 +12,7 @@ const searchContextDefaultValues: searchContextType = {
 
 export const SearchContext = createContext<searchContextType>(searchContextDefaultValues)
 
-type Props = {
+interface Props {
   children: ReactNode
 }
 

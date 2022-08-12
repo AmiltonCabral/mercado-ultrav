@@ -4,7 +4,7 @@ import Footer from "./Footer"
 import styles from '../styles/MainContainer.module.css'
 import { ReactNode } from "react"
 
-type Props = {
+interface Props {
   children: ReactNode
 }
 
