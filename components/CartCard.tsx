@@ -3,8 +3,14 @@ import Image from 'next/image'
 import Link from 'next/link'
 import { useContext } from 'react'
 import { CartContext } from '../contexts/CartContext'
+import { Product } from '../types/Product'
 
-export default function CartCard({product, index}) {
+type Props = {
+  product: Product,
+  index: number
+}
+
+export default function CartCard({product, index}: Props) {
 
   const { removeItemFromCart } = useContext(CartContext)
 

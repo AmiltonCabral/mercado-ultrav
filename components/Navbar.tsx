@@ -11,7 +11,7 @@ export default function Navbar() {
 
   const {setSearch} = useContext(SearchContext)
 
-  const handleSubmit = e => {
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault()
     router.push("/")
   }
@@ -23,7 +23,7 @@ export default function Navbar() {
           <input type="text" onChange={(e) => setSearch(e.target.value)}/>
         </form>
       </div>
-      <l1 className={styles.item}>Ultra<span>V</span></l1>
+      <h1 className={styles.item}>Ultra<span>V</span></h1>
       <div className={styles.item}>
         <ul className={styles.list}>
           <li>

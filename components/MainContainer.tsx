@@ -2,8 +2,13 @@ import Navbar from "./Navbar"
 import Footer from "./Footer"
 
 import styles from '../styles/MainContainer.module.css'
+import { ReactNode } from "react"
 
-export default function MainContainer({children}) {
+type Props = {
+  children: ReactNode
+}
+
+export default function MainContainer({children}: Props) {
   return (
     <>
       <Navbar />

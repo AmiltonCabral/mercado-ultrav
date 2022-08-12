@@ -1,8 +1,14 @@
-import Image from "next/image"
+import Image from "next/image";
 import Link from "next/link"
+import { Product } from "../types/Product";
 import styles from "../styles/Card.module.css"
 
-export default function Card({product}) {
+
+type Props = {
+  product: Product
+}
+
+export default function Card({ product }: Props) {
   return (
     <Link href={`/product/${product.id}`}>
       <div className={styles.card}>

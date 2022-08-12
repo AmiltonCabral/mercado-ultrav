@@ -3,15 +3,23 @@ import Head from "next/head"
 import { useContext } from "react"
 import { CartContext } from "../../contexts/CartContext"
 import styles from "../../styles/Product.module.css"
+import { Product } from "../../types/Product"
+import { ProductsAPI } from "../../types/ProductsAPI"
+import { GetStaticProps } from "next"
 
 export const getStaticPaths = async () => {
-  const api = 'http://localhost:3000/api/products'
 
-  const res = await fetch(`${api}`)
+  const api = await fetch(`http://localhost:3000/api/products`)
 
-  const data = await res.json()
+  const data: ProductsAPI | undefined = await api.json()
 
-  const paths = data.products.map((product) => {
+  type Params = {
+    params: {
+      productId: string
+    }
+  }
+
+  const paths = data?.products.map((product) => {
     return {
       params: { productId: product.id.toString() },
     }
@@ -23,19 +31,23 @@ export const getStaticPaths = async () => {
   }
 }
 
-export const getStaticProps = async (context) => {
-  const id = context.params.productId
+export const getStaticProps: GetStaticProps = async (context) => {
+  const id: number = Number.parseInt(context.params?.productId as string)
 
   const api = await fetch(`http://localhost:3000/api/products/`)
 
-  const data = await api.json()
+  const data: ProductsAPI | undefined = await api.json()
 
   return {
-    props: {product: data.products[id-1]}
+    props: {product: data?.products[id-1]}
   }
 }
 
-export default function Produto({product}) {
+interface ProductProps {
+  product: Product;
+}
+
+export default function ProductPage({product}: ProductProps) {
 
   const { addItemToCart } = useContext(CartContext)
 

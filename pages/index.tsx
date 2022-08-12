@@ -4,25 +4,31 @@ import Card from '../components/Card'
 import Pagination from '../components/Pagination'
 import styles from '../styles/Home.module.css'
 import { SearchContext } from '../contexts/SearchContext'
+import { Product } from '../types/Product'
+import { ProductsAPI } from '../types/ProductsAPI'
 
 export async function getStaticProps() {
   const api = 'http://localhost:3000/api/products'
 
   const res = await fetch(`${api}`)
-  const data = await res.json()
+  const data: ProductsAPI | undefined = await res.json()
 
   return {
     props: {
-      products: data.products,
+      products: data?.products ?? null
     },
   }
 }
 
-export default function Home({ products }) {
+type HomeProps = {
+  products: Product[] | undefined;
+}
+
+export default function Home({ products }: HomeProps) {
 
   const { search } = useContext(SearchContext)
 
-  const filteredProducts = products.filter((product) =>
+  const filteredProducts = products?.filter((product) =>
     product.name.toLowerCase().includes(search.toLowerCase()))
 
   const ITEMS_PER_PAGE = 9
@@ -31,7 +37,7 @@ export default function Home({ products }) {
 
   const offset = currentPage * ITEMS_PER_PAGE;
 
-  const currentPageProducts = filteredProducts.slice(offset, offset + ITEMS_PER_PAGE)
+  const currentPageProducts = filteredProducts?.slice(offset, offset + ITEMS_PER_PAGE)
 
   return (
     <>
@@ -47,15 +53,14 @@ export default function Home({ products }) {
       </div>
 
       <div className={styles.product_container}>
-        {currentPageProducts.map((product) =>
+        {currentPageProducts?.map((product) =>
           <Card key={product.id} product={product} />
         )}
       </div>
 
       <Pagination
-        total={filteredProducts.length}
+        total={filteredProducts?.length ?? 0}
         itemsPerPage={ITEMS_PER_PAGE}
-        offset={offset}
         currentPage={currentPage}
         setCurrentPage={setCurrentPage}
       />
