@@ -1,18 +1,17 @@
-import Image from 'next/image'
-import Link from 'next/link'
-import { useContext } from 'react'
-import { CartContext } from '../contexts/CartContext'
-import { Product } from '../types/Product'
-import styles from '../styles/CartCard.module.css'
+import Image from "next/image";
+import Link from "next/link";
+import { useContext } from "react";
+import { CartContext } from "../contexts/CartContext";
+import { Product } from "../types/Product";
+import styles from "../styles/CartCard.module.css";
 
 interface Props {
   product: Product;
-  index: number
+  index: number;
 }
 
-export default function CartCard({product, index}: Props) {
-
-  const { removeItemFromCart } = useContext(CartContext)
+export default function CartCard({ product, index }: Props) {
+  const { removeItemFromCart } = useContext(CartContext);
 
   return (
     <div className={styles.cart_card}>
@@ -32,10 +31,11 @@ export default function CartCard({product, index}: Props) {
         </div>
         <a
           className={styles.remove_product}
-          onClick={() => removeItemFromCart(index)}>
+          onClick={() => removeItemFromCart(index)}
+        >
           Remove product
         </a>
       </div>
     </div>
-  )
+  );
 }

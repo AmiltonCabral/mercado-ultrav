@@ -1,11 +1,10 @@
 import Image from "next/image";
-import Link from "next/link"
+import Link from "next/link";
 import { Product } from "../types/Product";
-import styles from "../styles/Card.module.css"
-
+import styles from "../styles/Card.module.css";
 
 interface Props {
-  product: Product
+  product: Product;
 }
 
 export default function Card({ product }: Props) {
@@ -22,5 +21,5 @@ export default function Card({ product }: Props) {
         <h4 className={styles.price}>R$ {product.price}</h4>
       </div>
     </Link>
-  )
+  );
 }

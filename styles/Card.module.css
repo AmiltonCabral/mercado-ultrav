@@ -10,7 +10,7 @@
   box-shadow: 5px 5px 9px rgba(0, 0, 0, 0.4);
   background-color: white;
   color: blueviolet;
-  transition: .5s;
+  transition: 0.5s;
 }
 
 .card:hover {

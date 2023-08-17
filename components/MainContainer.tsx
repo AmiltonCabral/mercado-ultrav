@@ -1,19 +1,19 @@
-import Navbar from "./Navbar"
-import Footer from "./Footer"
+import Navbar from "./Navbar";
+import Footer from "./Footer";
 
-import styles from '../styles/MainContainer.module.css'
-import { ReactNode } from "react"
+import styles from "../styles/MainContainer.module.css";
+import { ReactNode } from "react";
 
 interface Props {
-  children: ReactNode
+  children: ReactNode;
 }
 
-export default function MainContainer({children}: Props) {
+export default function MainContainer({ children }: Props) {
   return (
     <>
       <Navbar />
-        <main className={styles.container}>{children}</main>
+      <main className={styles.container}>{children}</main>
       <Footer />
     </>
-  )
+  );
 }
