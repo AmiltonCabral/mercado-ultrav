@@ -34,7 +34,7 @@ export default function Navbar() {
           </li>
           <li>
             <Link href="/cart">
-              <a>Cart</a>
+              <a data-fs-button-cart>Cart</a>
             </Link>
           </li>
         </ul>
