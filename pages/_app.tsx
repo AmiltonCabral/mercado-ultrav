@@ -10,7 +10,7 @@ function MyApp({ Component, pageProps }: AppProps) {
     <SearchProvider>
       <CartProvider>
         <MainContainer>
-          <Script src="http://localhost:3011/public/telemetry.js"></Script>
+          <Script src="http://localhost:9000/vtex-telemetry/scripts-library/telemetry.js"></Script>
           <Component {...pageProps} />
         </MainContainer>
       </CartProvider>
