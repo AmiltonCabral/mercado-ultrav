@@ -22,8 +22,8 @@ export default function Navbar() {
           <input type="text" onChange={(e) => setSearch(e.target.value)} />
         </form>
       </div>
-      <h1 className={styles.item}>
-        Ultra<span>V</span>
+      <h1 className={`${styles.item} ${styles.logo}`}>
+        <Link href="/">UltraV</Link>
       </h1>
       <div className={styles.item}>
         <ul className={styles.list}>

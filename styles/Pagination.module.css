@@ -15,16 +15,16 @@
   font-size: 1.2em;
   border-radius: 4px;
   width: 40px;
-  border: 2px solid slategray;
+  border: 2px solid blueviolet;
 }
 
 .active {
   background-color: whitesmoke;
-  color: slategray;
+  color: blueviolet;
 }
 
 .inactive {
-  background-color: slategray;
+  background-color: blueviolet;
   color: white;
   cursor: pointer;
 }
